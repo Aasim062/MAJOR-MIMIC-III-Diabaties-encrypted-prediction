@@ -1,0 +1,44 @@
+{
+  "A": {
+    "hospital_id": "A",
+    "num_test_samples": 3147,
+    "data_range": "[0:3,147]",
+    "metrics": {
+      "accuracy": 0.8716237686685733,
+      "auc_roc": 0.8774193419469832,
+      "f1_score": 0.5345622119815668,
+      "precision": 0.45579567779960706,
+      "recall": 0.6462395543175488
+    },
+    "total_inference_time": 8.135326623916626,
+    "samples_processed": 3147
+  },
+  "B": {
+    "hospital_id": "B",
+    "num_test_samples": 3147,
+    "data_range": "[3,147:6,294]",
+    "metrics": {
+      "accuracy": 0.8690816650778519,
+      "auc_roc": 0.8782506309597982,
+      "f1_score": 0.4950980392156863,
+      "precision": 0.42171189979123175,
+      "recall": 0.599406528189911
+    },
+    "total_inference_time": 7.522338628768921,
+    "samples_processed": 3147
+  },
+  "C": {
+    "hospital_id": "C",
+    "num_test_samples": 3148,
+    "data_range": "[6,294:9,442]",
+    "metrics": {
+      "accuracy": 0.8707115628970775,
+      "auc_roc": 0.8726269366021961,
+      "f1_score": 0.5114045618247299,
+      "precision": 0.43558282208588955,
+      "recall": 0.6191860465116279
+    },
+    "total_inference_time": 8.283337116241455,
+    "samples_processed": 3148
+  }
+}

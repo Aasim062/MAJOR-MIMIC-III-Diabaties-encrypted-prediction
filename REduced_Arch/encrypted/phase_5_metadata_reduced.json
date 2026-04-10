@@ -1,0 +1,37 @@
+{
+  "phase": 5,
+  "variant": "reduced_architecture",
+  "timestamp": "2026-04-04T15:05:45.597938",
+  "hospitals_aggregated": [
+    "A",
+    "B",
+    "C"
+  ],
+  "num_hospitals": 3,
+  "aggregation_strategy": "FedAvg (Simple Average)",
+  "architecture": {
+    "input_dim": 60,
+    "hidden_1": 32,
+    "hidden_2": 16,
+    "output_dim": 1,
+    "reduction": "86% (vs original 64\u2192128\u219264\u21921)"
+  },
+  "timing": {
+    "combination_sec": 0,
+    "scaling_sec": 0.0332334041595459,
+    "total_sec": 0.0332334041595459
+  },
+  "security": {
+    "scheme": "CKKS (Ring-LWE)",
+    "poly_degree": 8192,
+    "modulus_bits": 200,
+    "multiplative_depth_used": 0,
+    "security_level_classical": 128,
+    "security_level_quantum": 64
+  },
+  "outputs": {
+    "aggregated_layers_dir": "d:\\Major28March\\MAJOR-MIMIC-III-Diabaties-encrypted-prediction\\REduced_Arch\\encrypted\\aggregated_layers",
+    "report": "d:\\Major28March\\MAJOR-MIMIC-III-Diabaties-encrypted-prediction\\REduced_Arch\\reports\\phase_5_aggregation_reduced_report.txt",
+    "metadata": "d:\\Major28March\\MAJOR-MIMIC-III-Diabaties-encrypted-prediction\\REduced_Arch\\encrypted\\phase_5_metadata_reduced.json"
+  }
+}

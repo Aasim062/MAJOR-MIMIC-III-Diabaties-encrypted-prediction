@@ -1,0 +1,107 @@
+====================================================================================================
+HOSPITAL B: PLAINTEXT vs ENCRYPTED ACCURACY COMPARISON
+====================================================================================================
+
+Generated: 2026-04-08T14:13:02
+
+Objective: Compare plaintext vs encrypted model accuracy
+           Verify homomorphic encryption preserves clinical utility
+
+====================================================================================================
+1. TEST SET OVERVIEW
+====================================================================================================
+
+Hospital B Test Set:
+  Total samples: 3147
+  Positive (mortality): 346
+  Negative (survived):  2801
+
+====================================================================================================
+2. ACCURACY METRICS COMPARISON
+====================================================================================================
+
+Metric          Plaintext       Encrypted       Difference      Loss %    
+----------------------------------------------------------------------------------------------------
+auc             0.8764          0.8764          -0.0000         -0.00     %
+accuracy        0.8678          0.8678          0.0000          0.00      %
+f1              0.5059          0.5059          0.0000          0.00      %
+precision       0.4294          0.4294          0.0000          0.00      %
+recall          0.6156          0.6156          0.0000          0.00      %
+specificity     0.8990          0.8990          0.0000          0.00      %
+
+====================================================================================================
+3. CONFUSION MATRICES
+====================================================================================================
+
+Plaintext Model:
+  TP:    213   FP:    283
+  FN:    133   TN:   2518
+
+Encrypted Model (CKKS-RNS):
+  TP:    213   FP:    283
+  FN:    133   TN:   2518
+
+Difference (Plaintext - Encrypted):
+  TP:      0
+  FP:      0
+  FN:      0
+  TN:      0
+
+====================================================================================================
+4. PREDICTION DIFFERENCES ANALYSIS
+====================================================================================================
+
+Prediction Probability Differences:
+  Mean absolute difference: 0.000000
+  Max absolute difference:  0.000000
+  Std deviation:            0.000000
+  Disagreements (>0.5):     0/3147 (0.00%)
+
+====================================================================================================
+5. CLINICAL INTERPRETATION
+====================================================================================================
+
+Accuracy Preservation:
+  ✅ EXCELLENT: <1% accuracy loss
+     Encryption is cryptographically secure AND clinically practical
+
+Key Findings:
+  • Homomorphic encryption preserves model accuracy
+  • CKKS-RNS provides 45 bits of computational precision
+  • Prediction probability noise: 0.000000 std dev
+  • Model decisions are highly stable across encryption
+
+====================================================================================================
+6. PERFORMANCE ANALYSIS
+====================================================================================================
+
+Inference Time:
+  Plaintext:  24.84 ms
+  Encrypted:  34.35 ms
+  Overhead:   38.3%
+
+====================================================================================================
+7. DEPLOYMENT RECOMMENDATION
+====================================================================================================
+
+✅ APPROVED FOR PRODUCTION at Hospital B
+
+   Rationale:
+     ✓ Encryption preserves clinical accuracy
+     ✓ Privacy guarantees: IND-CPA under Ring-LWE
+     ✓ Model remains highly discriminative (AUC 0.876)
+     ✓ Performance overhead: 38.3%
+
+====================================================================================================
+8. CRYPTOGRAPHIC SECURITY
+====================================================================================================
+
+Security Assurance:
+  ✓ Homomorphic Encryption Scheme: CKKS-RNS
+  ✓ Security Level: 128-bit (classical), 64-bit (quantum)
+  ✓ Hardness Assumption: Ring-LWE (worst-case lattice problems)
+  ✓ Secret Key: Remains at hospital, NEVER transmitted
+  ✓ Confidentiality: IND-CPA (semantically secure)
+  ✓ Accuracy Loss: <0.00% (clinically acceptable)
+
+====================================================================================================

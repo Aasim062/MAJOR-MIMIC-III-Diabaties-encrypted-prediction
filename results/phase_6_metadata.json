@@ -1,0 +1,51 @@
+{
+  "phase": 6,
+  "name": "Hospital-Side Decryption & Encrypted Inference",
+  "timestamp": "2026-04-08T14:12:27",
+  "hospital": "A",
+  "test_set_size": 1000,
+  "metrics": {
+    "plaintext": {
+      "auc": 0.5035400566409062,
+      "accuracy": 0.513,
+      "f1": 0.1161524500907441,
+      "precision": 0.6037735847917408,
+      "recall": 0.06425702811115949,
+      "specificity": 0.9581673306582038,
+      "tp": 32,
+      "fp": 21,
+      "tn": 481,
+      "fn": 466,
+      "threshold": 0.5
+    },
+    "encrypted": {
+      "auc": 0.46747147954367274,
+      "accuracy": 0.502,
+      "f1": 0.02734375,
+      "precision": 0.49999999964285713,
+      "recall": 0.01405622489931614,
+      "specificity": 0.9860557768727877,
+      "tp": 7,
+      "fp": 7,
+      "tn": 495,
+      "fn": 491,
+      "threshold": 0.5
+    },
+    "prediction_differences": {
+      "mean_abs_diff": 0.020757168531417847,
+      "max_abs_diff": 0.0982218086719513,
+      "std_diff": 0.016081253066658974,
+      "num_disagreements": 67
+    }
+  },
+  "timing": {
+    "plaintext_inference_sec": 0.02701258659362793,
+    "encrypted_inference_sec": 0.016510009765625
+  },
+  "security": {
+    "scheme": "CKKS-RNS",
+    "decryption_location": "hospital_local",
+    "secret_key_exposure": "never_transmitted",
+    "guarantee": "IND-CPA under Ring-LWE"
+  }
+}

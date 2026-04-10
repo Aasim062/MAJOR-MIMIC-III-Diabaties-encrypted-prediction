@@ -1,0 +1,14 @@
+
+Hospital Comparison:
+Hospital   Samples    AUC      Accuracy   F1-Score   Recall  
+----------------------------------------------------------------------
+A          3148       0.8797   0.8694     0.5159     0.6311  
+B          3147       0.8764   0.8678     0.5059     0.6156  
+C          3147       0.8724   0.8742     0.5206     0.6196  
+----------------------------------------------------------------------
+
+Aggregated Model Consistency:
+  Mean AUC across hospitals: 0.8761
+  Std Dev:                  0.0030
+  Variance:                 0.0000
+  ✅ EXCELLENT: Model performs consistently across all hospitals

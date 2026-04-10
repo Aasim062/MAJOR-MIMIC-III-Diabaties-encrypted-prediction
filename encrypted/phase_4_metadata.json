@@ -1,0 +1,35 @@
+{
+  "phase": 4,
+  "timestamp": "2026-04-08T00:17:54.191363",
+  "config": {
+    "poly_modulus_degree": 8192,
+    "coeff_mod_bit_sizes": [
+      60,
+      40,
+      40,
+      60
+    ],
+    "global_scale": 1073741824,
+    "security_bits": 128,
+    "multiplicative_depth": 5
+  },
+  "hospitals_processed": [
+    "A",
+    "B",
+    "C"
+  ],
+  "context_path": "encrypted\\context.bin",
+  "ciphertext_paths": {
+    "A": "encrypted\\ct_weights_A.bin",
+    "B": "encrypted\\ct_weights_B.bin",
+    "C": "encrypted\\ct_weights_C.bin"
+  },
+  "report_path": "reports\\phase_4_encryption_report.txt",
+  "noise_bounds": {
+    "initial_epsilon_0": 1e-09,
+    "epsilon_per_mult": 1e-05,
+    "linear_accumulation": 5e-05,
+    "exponential_accumulation": 4.889455144032923,
+    "conservative_bound": 4.889455144032923
+  }
+}

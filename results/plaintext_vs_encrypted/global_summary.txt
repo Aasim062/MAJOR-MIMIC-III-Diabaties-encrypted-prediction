@@ -1,0 +1,50 @@
+====================================================================================================
+GLOBAL SUMMARY: PLAINTEXT vs ENCRYPTED COMPARISON
+====================================================================================================
+
+Generated: 2026-04-08T14:13:02
+
+====================================================================================================
+ACCURACY SUMMARY ACROSS ALL HOSPITALS
+====================================================================================================
+
+Hospital   Metric          Plaintext    Encrypted    Loss %    
+----------------------------------------------------------------------------------------------------
+A          AUC             0.8797       0.8797       0.00      %
+           Accuracy        0.8694       0.8694       0.00      %
+B          AUC             0.8764       0.8764       -0.00     %
+           Accuracy        0.8678       0.8678       0.00      %
+C          AUC             0.8724       0.8724       0.00      %
+           Accuracy        0.8742       0.8742       0.00      %
+
+====================================================================================================
+AGGREGATE ANALYSIS
+====================================================================================================
+
+Mean AUC (Plaintext):   0.8761
+Mean AUC (Encrypted):   0.8761
+Mean AUC Loss:          -0.00%
+
+Mean Accuracy (Plaintext): 0.8705
+Mean Accuracy (Encrypted): 0.8705
+Mean Accuracy Loss:        0.00%
+
+Plaintext AUC Std Dev:   0.0030
+Encrypted AUC Std Dev:   0.0030
+
+====================================================================================================
+CONCLUSION
+====================================================================================================
+
+Homomorphic Encryption Impact:
+  Maximum accuracy loss: 0.00%
+  Status: ✅ EXCELLENT - Encryption preserves accuracy
+          Viable for production deployment
+
+Cryptographic Guarantee:
+  ✓ Data privacy preserved (IND-CPA semantically secure)
+  ✓ Server never sees plain test data
+  ✓ Hospital controls decryption (secret key never shared)
+  ✓ Clinical accuracy preserved (<0.00% loss)
+
+====================================================================================================

@@ -1,0 +1,80 @@
+{
+  "A": {
+    "hospital_id": "A",
+    "architecture": "64 \u2192 32 \u2192 16 \u2192 1",
+    "timestamp": "2026-04-04T15:39:42.467473",
+    "num_test_samples": 9442,
+    "metrics": {
+      "accuracy": 0.7631857657276001,
+      "auc_roc": 0.8667806886638713,
+      "f1_score": 0.4304635761589404,
+      "precision": 0.2927927927927928,
+      "recall": 0.8125
+    },
+    "confusion": {
+      "tn": 6361,
+      "fp": 2041,
+      "fn": 195,
+      "tp": 845
+    },
+    "samples_successful": 9442,
+    "samples_failed": 0,
+    "timings": {
+      "inference_sec": 0.31221508979797363,
+      "total_sec": 0.31221508979797363,
+      "avg_per_sample_sec": 3.3066626752591996e-05
+    }
+  },
+  "B": {
+    "hospital_id": "B",
+    "architecture": "64 \u2192 32 \u2192 16 \u2192 1",
+    "timestamp": "2026-04-04T15:39:43.042976",
+    "num_test_samples": 9442,
+    "metrics": {
+      "accuracy": 0.7631857657276001,
+      "auc_roc": 0.8667806886638713,
+      "f1_score": 0.4304635761589404,
+      "precision": 0.2927927927927928,
+      "recall": 0.8125
+    },
+    "confusion": {
+      "tn": 6361,
+      "fp": 2041,
+      "fn": 195,
+      "tp": 845
+    },
+    "samples_successful": 9442,
+    "samples_failed": 0,
+    "timings": {
+      "inference_sec": 0.2296450138092041,
+      "total_sec": 0.2296450138092041,
+      "avg_per_sample_sec": 2.4321649418471097e-05
+    }
+  },
+  "C": {
+    "hospital_id": "C",
+    "architecture": "64 \u2192 32 \u2192 16 \u2192 1",
+    "timestamp": "2026-04-04T15:39:43.434048",
+    "num_test_samples": 9442,
+    "metrics": {
+      "accuracy": 0.7631857657276001,
+      "auc_roc": 0.8667806886638713,
+      "f1_score": 0.4304635761589404,
+      "precision": 0.2927927927927928,
+      "recall": 0.8125
+    },
+    "confusion": {
+      "tn": 6361,
+      "fp": 2041,
+      "fn": 195,
+      "tp": 845
+    },
+    "samples_successful": 9442,
+    "samples_failed": 0,
+    "timings": {
+      "inference_sec": 0.23351407051086426,
+      "total_sec": 0.23351407051086426,
+      "avg_per_sample_sec": 2.473142030405256e-05
+    }
+  }
+}

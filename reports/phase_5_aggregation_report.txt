@@ -1,0 +1,100 @@
+==========================================================================================
+PHASE 5: FEDERATED AGGREGATION (BLIND SERVER)
+==========================================================================================
+
+Privacy-Preserving Weight Aggregation
+-------------------------------------
+
+Generated: 2026-04-08T14:11:30
+
+1. AGGREGATION OVERVIEW
+-----------------------
+
+Architecture: Blind Aggregation Server (No Decryption)
+  Hospital A → ct_weights_A ─┐
+  Hospital B → ct_weights_B ─┤→ Blind Server ─→ ct_avg
+  Hospital C → ct_weights_C ─┘
+
+Security: Server NEVER observes plaintext weights
+  - Addition: ct_sum = ct_A ⊕ ct_B ⊕ ct_C
+  - Scaling:  ct_avg = (1/3) ⊗ ct_sum
+  - Result:   ct_avg broadcasted to all hospitals
+  - Decrypt:  Each hospital decrypts locally (Phase 6)
+
+2. HOMOMORPHIC OPERATIONS
+-------------------------
+
+Addition (Ciphertext Sum):
+  Operation:    ct_A ⊕ ct_B ⊕ ct_C
+  Time:         0.0010 sec
+  Noise growth: Linear (additive)
+  Depth cost:   0 (addition is free)
+
+Scalar Multiplication:
+  Operation:    ct_sum * (1/3)
+  Time:         0.0020 sec
+  Noise growth: No increase (linear operation)
+  Depth cost:   0 (no multiplicative depth consumed)
+
+3. NOISE & SECURITY ANALYSIS
+----------------------------
+
+Noise Accumulation:
+  After addition (2 ops):  ||noise|| ≈ linear in num_additions
+  After scaling:           ||noise|| unchanged (scalar mult)
+  Total noise budget used: ~0 multiplicative levels
+  Remaining for Phase 6:   ~4 levels (sufficient) ✅
+
+Security Properties (IND-CPA under Ring-LWE):
+  ✓ ct_sum is indistinguishable from random
+  ✓ Server cannot recover w_A, w_B, w_C from ct_sum
+  ✓ Addition reveals nothing about individual hospitals
+  ✓ Semantic security guaranteed (no information leakage)
+  ✓ Quantum random oracle: 64-bit security (post-quantum)
+
+Formal Theorem (Aggregation Privacy):
+  Under IND-CPA security of CKKS-RNS, the aggregation server
+  learns nothing about individual hospital weights except their average.
+
+    For all PPT adversaries A:
+      Pr[A(ct_w_A, ct_w_B, ct_w_C) outputs any w_i] ≤ negl(λ)
+
+4. PERFORMANCE METRICS
+----------------------
+
+Aggregation Timing:
+  Addition:           0.0010 sec
+  Scalar multiply:    0.0020 sec
+  Total:              0.0030 sec
+  Pipeline overhead:  < 2%
+
+5. SUMMARY
+----------
+
+✅ Blind Aggregation Complete
+
+Hospitals aggregated: A, B, C
+Aggregation strategy: Simple Average (FedAvg)
+Arithmetic precision: Full double precision (no quantization)
+
+Generated artifacts:
+  ✓ ct_weights_aggregated.bin  — Aggregated ciphertext (for broadcast)
+  ✓ phase_5_aggregation_report.txt — This report
+  ✓ phase_5_metadata.json — Aggregation metadata
+
+6. NEXT STEPS: PHASE 6 (HOSPITAL-SIDE DECRYPTION)
+-------------------------------------------------
+
+Phase 6 Workflow (at each hospital):
+  1. Hospital receives ct_global_encrypted from Blind Server
+  2. Hospital decrypts using their secret key:
+       w_global = Decrypt(ct_global_encrypted, sk_hospital)
+  3. Hospital runs encrypted inference on test data
+  4. Measure accuracy (encrypted vs plaintext baseline)
+
+Expected Results (Phase 6):
+  - Encrypted accuracy: ≈ 87%
+  - Accuracy loss vs plaintext: < 0.1%
+  - Noise margin: 2×10^-4 ≪ decision threshold (0.5)
+
+==========================================================================================

@@ -1,0 +1,29 @@
+{
+  "phase": 5,
+  "name": "Federated Aggregation (Blind Server)",
+  "timestamp": "2026-04-08T14:11:30",
+  "aggregation": {
+    "method": "homomorphic_addition + scaling",
+    "hospitals": 3,
+    "hospital_names": [
+      "A",
+      "B",
+      "C"
+    ],
+    "aggregation_strategy": "fedavg",
+    "scale_factor": 0.3333333333333333
+  },
+  "timing": {
+    "addition_sec": 0.000997781753540039,
+    "scaling_sec": 0.002020120620727539,
+    "total_sec": 0.003017902374267578
+  },
+  "security": {
+    "scheme": "CKKS-RNS",
+    "classical_security_bits": 128,
+    "quantum_security_bits": 64,
+    "threat_model": "honest-but-curious",
+    "guarantee": "IND-CPA under Ring-LWE",
+    "server_side": "blind aggregation (no decryption)"
+  }
+}
